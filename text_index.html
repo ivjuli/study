@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="text_css.css">
+</head>
+<body>
+
+<script>
+
+function zad1 (a, b) {
+        if (b === 0)  {
+             return 1;
+        }
+
+        let range = b;
+        let result = a;
+
+        if ( b < 0) {
+            range = range * (-1);
+        }
+        for (let i = 1; i < range; i++) {
+            result = result * a;
+        }
+        return b < 0 ? 1 / result : result
+    }
+  
+
+
+function zad2 (a, b) {
+        for (let i = 0; i<a; i++) {
+            let row = ' ';
+    for (let z = 0; z<b; z++) {
+if (i%2 === 0) {
+    if (z%2=== 0) {
+        row = row + "#";
+    } else { 
+    row = row + "_";
+    }
+} else {
+    if (z%2 === 0) {
+        row = row + "_"; 
+        }  else {
+        row = row + "#" 
+        }
+} 
+   }
+    console.log (row + "\n")
+}
+        }
+
+
+  
+function zad3 (hour, min, dur) {
+const MIN = 60;
+const SUT = 24;
+let futureMins = (dur+min) % MIN
+let futureHours = (((hour * MIN) + min + dur - futureMins) / MIN) % SUT
+
+return `${futureHours}:${futureMins}`
+ }
+
+ function zad4 (hour, min, dur) {
+const MIN = 60;
+const SUT = 24;
+let futureMins = (dur+min) % MIN
+let tempMinHours = (hour * MIN) + min + (dur - futureMins)
+
+let futureHours = (tempMinHours - (tempMinHours % MIN)) / MIN % SUT 
+return `${futureHours}:${futureMins}`
+ }
+
+
+
+ function elevator(left, right, call){
+     let liftRight = "'right'";
+     let liftLeft = "'left'";
+  return   right === call  ? console.log(liftRight) : left === call ? console.log(liftLeft) : console.log(liftRight);
+}
+
+
+function whatday(num) { 
+    
+    let n = num;
+
+  if (n = 1) {return console.log ("Sunday")} else {
+  if (n = 2) {return console.log ("Monday")} else {
+    if (n = 3) {return console.log ("Tuesday")} else {
+      if (n = 4) {return console.log ("Wednesday")} else {
+         if (n = 5) {return console.log ("Thursday")} else {
+            if (n = 6) {return console.log ("Friday")} else {
+               if (n = 7) {return console.log ("Saturday")} else 
+                    {return console.log ("Wrong, please enter a number between 1 and 7")};
+}}}}}}}
+
+
+
+    </script>
+
+   
+</body>
+</html>
