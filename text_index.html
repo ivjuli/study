@@ -96,6 +96,18 @@ function whatday(num) {
 
 
 
+function man(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+man.prototype = {
+    test : "this is proto",
+    getName: function() {
+        return this.name
+    }
+}
+
     </script>
 
    
