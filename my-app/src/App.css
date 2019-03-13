@@ -516,7 +516,6 @@ margin-bottom: 30px;
   position: absolute;
   width: 35px;
   height: 35px;
-
   background-color:#435465;
 }
 .rombiki_raspisanie6 {
@@ -577,6 +576,17 @@ z-index: 4;
   line-height: normal;
   font-size: 14px;
   margin-left: 0.5vw;
+}
+.raspisanie_spisok {
+  display: table;
+  margin: 0;
+  padding: 0;
+}
+.spisok {
+  display: table-cell;
+}
+.spisok_none {
+  display: none;
 }
 .rombiki_raspisanie_mesiac {
 position: relative;
