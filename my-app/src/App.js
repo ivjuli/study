@@ -2,24 +2,51 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import Rombiki from './components/Rombiki/Rombiki';
 import Footer from './components/Footer/Footer';
+import {getAllLanguage} from '././helpers/api';
 import './App.css';
+
+import {connect} from 'react-redux'
+
 
 
 class App extends Component {
 
+text_norv = () => {
+        console.log("norv")
+}
+yroven_A1 = () => {
+        console.log("A1")
+}
 
-        constructor(props) {
-                super(props);
-                this.state = {
-                  value: null,
-                };
-              }
+constructor() {
+        super();
+        this.getData();
+        this.renderData();
+}
 
+getData = async () => {
+const language = await getAllLanguage();
+this.setState({language})
+}
 
+renderData = () => {
+   return this.props.language.map((el, ind) => {
+           return (
+                <ul key={ind}><li className="spisok_none">{el.id}</li><li className="spisok">{el.startData}</li><li className="spisok">{el.language}</li><li className="spisok">{el.level}</li></ul>
+           )
+   }
+        ) 
+}
 
 
 
   render() {
+console.log(this.props);
+
+console.log(this.getData);
+console.log(this.renderData);
+
+
     return (
      
      <div className="App">
@@ -30,8 +57,7 @@ class App extends Component {
         <div className="text_yaziki"><p>КАКОЙ ЯЗЫК<br/>ХОТИТЕ ИЗУЧАТЬ?</p></div>
 
         
-<div className="romb_norv" onClick={() => alert('click')}>
-       {this.props.value}
+<div className="romb_norv" onClick={this.text_norv}>
     <div className="romb_norv_flex">
     <div className="text_norv_kub">НОРВЕЖСКИЙ</div>
     <div className="text_norv_kub_2">
@@ -41,19 +67,19 @@ class App extends Component {
 </div>
 
 
-<div className="romb_islan">   
+<div className="romb_islan" onClick={console.log("islan")}>   
     <div className="foto_islan"><img src="/img/img_reykjavik.png" alt="reykjavik" width="255px" height="255px"/></div>    
     <div className="text_yaziki_romb">ИСЛАНСКИЙ</div>
 </div> 
-<div className="romb_shved">
+<div className="romb_shved" onClick={console.log("shved")}>
         <div className="foto_shved"><img src="/img/img_stokgolm.png" alt="stokgolm" width="255px" height="255px"/></div>
     <div className="text_yaziki_romb">ШВЕДСКИЙ</div>
 </div> 
-<div className="romb_fin">
+<div className="romb_fin" onClick={console.log("fin")}>
         <div className="foto_fin"><img src="/img/img_helsinki.png" alt="helsinki" width="255px" height="255px"/></div>
     <div className="text_yaziki_romb">ФИНСКИЙ</div>
 </div> 
-<div className="romb_dat">
+<div className="romb_dat" onClick={console.log("dat")}>
         <div className="foto_dat"><img src="/img/img_kopengagen.png" alt="kopengagen" width="255px" height="255px"/></div>
     <div className="text_yaziki_romb">ДАТСКИЙ</div>
 </div> 
@@ -67,7 +93,7 @@ class App extends Component {
         
     </div>
 
-    <div className="container_yrovni">
+    <div className="container_yrovni" onClick={this.yroven_A1}>
             <div className="tex_yrovni">ВЫБЕРЕТЕ ВАШ УРОВЕННЬ ВЛАДЕНИЯ ЯЗЫКОМ</div>
             <div className="flex_yrovni">
                 <div className="yrovni">
@@ -77,7 +103,7 @@ class App extends Component {
                     <div className="text_yrovni_vubor2">Можете достаточно свободно общаться на английском на отвлеченные темы, способны взаимодействовать с носителями языка без напряжения для каждой из сторон</div>
                 </div>
                 </div>
-                <div className="yrovni">
+                <div className="yrovni" onClick={console.log("A2")}>
                         <div className="znachki"><img src="/img/rombik_prozrachnyi.svg" alt="rombik" width="30px" height="30px"/></div>
                     <div className="flex_yrovni_text">
                         <div className="text_yrovni_vubor">Начинающий (A2)</div>
@@ -85,7 +111,7 @@ class App extends Component {
                                 (эссе, письмо) на незнакомую вам тематику</div>
                     </div>
                     </div>
-                    <div className="yrovni">
+                    <div className="yrovni" onClick={console.log("B1")}>
                             <div className="znachki"><img src="/img/rombik_prozrachnyi.svg" alt="rombik" width="30px" height="30px"/></div>
                         <div className="flex_yrovni_text">
                             <div className="text_yrovni_vubor">Продолжающий (B1)</div>
@@ -93,7 +119,7 @@ class App extends Component {
                                 </div>
                         </div>
                         </div>
-                        <div className="yrovni">
+                        <div className="yrovni" onClick={console.log("B2")}>
                                 <div className="znachki"><img src="/img/rombik_prozrachnyi.svg" alt="rombik" width="30px" height="30px"/></div>
                             <div className="flex_yrovni_text">
                                 <div className="text_yrovni_vubor">Продолжающий (B2)</div>
@@ -101,7 +127,7 @@ class App extends Component {
                                         на английском языке на тему вашей профессиональной специализации</div>
                             </div>
                             </div>
-                            <div className="yrovni">
+                            <div className="yrovni" onClick={console.log("C1")}>
                                     <div className="znachki"><img src="/img/rombik_dvoinoi.svg" alt="rombik" width="65px" height="45px"/></div>
                                 <div className="flex_yrovni_text">
                                     <div className="text_yrovni_vubor">Продвинутый (C1)</div>
@@ -111,7 +137,7 @@ class App extends Component {
                                             </div>
                                 </div>
                                 </div>
-                                <div className="yrovni">
+                                <div className="yrovni" onClick={console.log("C2")}>
                                         <div className="znachki"><img src="/img/rombik_prozrachnyi.svg" alt="rombik" width="30px" height="30px"/></div>
                                     <div className="flex_yrovni_text">
                                         <div className="text_yrovni_vubor">Продвинутый (C2)</div>
@@ -134,8 +160,8 @@ class App extends Component {
                     <Rombiki/>
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
-                    <div className="effekt_raspisanie">05.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;исландский А1</div>
-                    <div className="effekt_raspisanie">07.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;исландский А2</div>
+                     <ul className="raspisanie_spisok"><li className="spisok_none">id</li><li className="spisok">07.02</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li className="spisok">исландский</li>&nbsp;&nbsp;<li className="spisok">А2</li></ul>
+                   
                     <div className="effekt_raspisanie">10.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;норвежский B1</div>
                     <div className="effekt_raspisanie">20.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;финский А1</div></div>
                     <div className="rombiki_raspisanie_mesiac">ФЕВРАЛЬ</div></div>
@@ -223,4 +249,12 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+        (store) =>{
+                return{
+                        language: store.language,
+                        month: store.month,
+                }
+        }
+
+)(App);
