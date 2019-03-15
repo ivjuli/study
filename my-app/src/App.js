@@ -20,8 +20,8 @@ yroven_A1 = () => {
 
 constructor() {
         super();
-        this.getData();
-        this.renderData();
+        
+        /*this.renderData();*/
 }
 
 getData = async () => {
@@ -29,14 +29,14 @@ const language = await getAllLanguage();
 this.setState({language})
 }
 
-renderData = () => {
+/*renderData = async () => {
    return this.props.language.map((el, ind) => {
            return (
-                <ul key={ind}><li className="spisok_none">{el.id}</li><li className="spisok">{el.startData}</li><li className="spisok">{el.language}</li><li className="spisok">{el.level}</li></ul>
+        <li className="spisok">{el.startData}</li>
            )
    }
         ) 
-}
+}*/
 
 
 
@@ -161,7 +161,7 @@ console.log(this.renderData);
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                      <ul className="raspisanie_spisok"><li className="spisok_none">id</li><li className="spisok">07.02</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li className="spisok">исландский</li>&nbsp;&nbsp;<li className="spisok">А2</li></ul>
-                   
+                  
                     <div className="effekt_raspisanie">10.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;норвежский B1</div>
                     <div className="effekt_raspisanie">20.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;финский А1</div></div>
                     <div className="rombiki_raspisanie_mesiac">ФЕВРАЛЬ</div></div>
