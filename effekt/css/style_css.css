@@ -1582,6 +1582,9 @@ a.test_c:hover {
     text-decoration: underline;
 }
 .romb_norv_c {
+    margin: auto;
+}
+.romb_norv_c_1 {
     position: relative;
     width: 13vw;
     height: 13vw;
@@ -1596,9 +1599,24 @@ a.test_c:hover {
     left: 25vw;
     overflow: hidden;
 }
-.romb_norv_c:hover {
-    transform: rotate(45deg) scale(1.07);}
+.romb_norv_c_1:hover {
+    z-index: -2; }
 
+  .romb_norv_c_2   {
+    position: relative;
+    width: 13vw;
+    height: 13vw;
+    transform: rotate(45deg);
+    background-color: #BACBDC;
+    border: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 13vw;
+    left: 25vw;
+    overflow: hidden;
+  }
 .romb_norv_flex_c { display: none;}
 .foto_norv_c {
     position: relative;
