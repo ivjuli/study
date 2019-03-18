@@ -29,14 +29,14 @@ const language = await getAllLanguage();
 this.setState({language})
 }
 
-/*renderData = async () => {
+renderData =  () => {
    return this.props.language.map((el, ind) => {
            return (
         <li className="spisok">{el.startData}</li>
            )
    }
         ) 
-}*/
+}
 
 
 
@@ -160,7 +160,14 @@ console.log(this.renderData);
                     <Rombiki/>
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
-                     <ul className="raspisanie_spisok"><li className="spisok_none">id</li><li className="spisok">07.02</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li className="spisok">исландский</li>&nbsp;&nbsp;<li className="spisok">А2</li></ul>
+                     <ul className="raspisanie_spisok">
+                     <li className="spisok_none">id</li>
+                     <li className="spisok">07.02</li>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <li className="spisok">исландский</li
+                     >&nbsp;&nbsp;<li className="spisok">А2</li>
+                     {this.renderData()}
+                     </ul>
                   
                     <div className="effekt_raspisanie">10.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;норвежский B1</div>
                     <div className="effekt_raspisanie">20.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;финский А1</div></div>
