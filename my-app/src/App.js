@@ -33,56 +33,67 @@ renderData_2 =  () => {
    return this.props.language.map((el, ind) => {
            while (el.idMonth == 2){
            return (
-                <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
+                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                ) 
+        }}
    )}
 
 renderData_3 =  () => {
         return this.props.language.map((el, ind) => {
                 while (el.idMonth == 3){
-                return (
-                     <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-        )}
+                        return (
+                                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                                ) 
+                        }}
+                   )}
 
         renderData_4 =  () => {
                 return this.props.language.map((el, ind) => {
                         while (el.idMonth == 4){
-                        return (
-                             <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-                )}
+                                return (
+                                        <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                                        ) 
+                                }}
+                           )}
         
                 renderData_5 =  () => {
                         return this.props.language.map((el, ind) => {
                                 while (el.idMonth == 5){
-                                return (
-                                     <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-                        )}
+                                        return (
+                                                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                                                ) 
+                                        }}
+                                   )}
                         renderData_6 =  () => {
                                 return this.props.language.map((el, ind) => {
                                         while (el.idMonth == 6){
-                                        return (
-                                             <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-                                )}
+                                                return (
+                                                        <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                                                        ) 
+                                                }}
+                                           )}
                                 renderData_7 =  () => {
                                         return this.props.language.map((el, ind) => {
                                                 while (el.idMonth == 7){
-                                                return (
-                                                     <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-                                        )}             
+                                                        return (
+                                                                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                                                                ) 
+                                                        }}
+                                                   )}     
                 
-renderData_ob =  () => {
+/*renderData_ob =  () => {
                 return this.props.language.map((el, ind) => {
                         while (el.idMonth == 3){
                         return (
                              <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-                )}
+                )}*/
 
 
 
   render() {
-console.log(this.props);
 
+console.log(this.props);
 console.log(this.getData);
-console.log(this.renderData);
 
 
     return (
