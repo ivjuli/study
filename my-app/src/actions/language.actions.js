@@ -1,4 +1,4 @@
-import {GET_LANGUAGE} from '../helpers/actionsConst';
+import {GET_LANGUAGE, DEL_NAME_LANGUAGE} from '../helpers/actionsConst';
 import {getAllLanguage} from '../helpers/api';
 
 
@@ -9,3 +9,7 @@ export const getLanguage = async (dispatch)=>{
         payload: language,
     } )
 };
+
+export const delLanguage = () => {
+    return {type: DEL_NAME_LANGUAGE};
+}
