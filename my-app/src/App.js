@@ -11,13 +11,6 @@ import {connect} from 'react-redux'
 
 class App extends Component {
 
-text_norv = () => {
-        console.log("norv")
-}
-yroven_A1 = () => {
-        console.log("A1")
-}
-
 constructor() {
         super();
         
@@ -88,13 +81,41 @@ renderData_3 =  () => {
                              <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
                 )}*/
 
+/*delData_is = () => {
+        this.props.delLanguage();
+}*/
 
+/*delData_is = () => {
+       return this.props.language.map((el, ind) => {
+                while (el.namelanguage == "норвежский"){
+                        return (
+                const newNamelanguage = language.splice();
+                ) 
+        }}
+   )}*/
 
+/*renderData_is =  () => {
+        return this.props.language.map((el, ind) => {
+                while (el.namelanguage == "исландский"){
+                        return (
+                                 this.props.language.map((el, ind) => {
+                                                while (el.idMonth == 2){
+                                                return (<div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li><div>); }
+                                                else  {return  (<div><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>)}
+                                                 
+                                             }
+                                        )
+                                                   ) 
+                        }}
+                   )}     */
+
+/*renderData_is =  (
+) => {        const arr = this.state.language;
+        arr.splice ("исландский");
+        this.setState ({language: arr});}*/
+
+ 
   render() {
-
-console.log(this.props);
-console.log(this.getData);
-
 
     return (
      
@@ -116,7 +137,7 @@ console.log(this.getData);
 </div>
 
 
-<div className="romb_islan" onClick={console.log("islan")}>   
+<div className="romb_islan" onClick={console.log("shved")}>   
     <div className="foto_islan"><img src="/img/img_reykjavik.png" alt="reykjavik" width="255px" height="255px"/></div>    
     <div className="text_yaziki_romb">ИСЛАНСКИЙ</div>
 </div> 
