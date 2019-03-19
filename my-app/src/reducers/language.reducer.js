@@ -1,4 +1,4 @@
-import {GET_LANGUAGE} from '../helpers/actionsConst';
+import {GET_LANGUAGE, DEL_NAME_LANGUAGE} from '../helpers/actionsConst';
 
 
 const iniState = [
@@ -232,6 +232,8 @@ const iniState = [
        switch (action.type) {
            case GET_LANGUAGE:
            return [... action.payload];
+           case DEL_NAME_LANGUAGE:
+           return [];
            default: 
            return state;
        }
