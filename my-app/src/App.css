@@ -584,6 +584,7 @@ z-index: 4;
 }
 .spisok {
   display: table-cell;
+  margin: 10vw;
 }
 .spisok_none {
   display: none;
