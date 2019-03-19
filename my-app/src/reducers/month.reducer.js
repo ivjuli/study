@@ -6,7 +6,7 @@ const iniState = [
    
    {
      "idMonth": 2,
-     "nameMonth": "ЯНВАРЬ"
+     "nameMonth": "ФЕВРАЛЬ"
    },
    {
      "idMonth": 3,
