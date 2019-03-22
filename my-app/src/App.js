@@ -22,7 +22,7 @@ const language = await getAllLanguage();
 this.setState({language})
 }
 
-renderData_2 =  () => {
+/*renderData_2 =  () => {
    return this.props.language.map((el, ind) => {
            while (el.idMonth == 2){
            return (
@@ -72,7 +72,7 @@ renderData_3 =  () => {
                                                                 <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
                                                                 ) 
                                                         }}
-                                                   )}     
+                                                   )}     */
                 
 /*renderData_ob =  () => {
                 return this.props.language.map((el, ind) => {
@@ -114,7 +114,22 @@ renderData_3 =  () => {
         arr.splice ("исландский");
         this.setState ({language: arr});}*/
 
+/*const arr1 = [...arr]
+arr1.filter(el=>{return el.language == "исланский"})*/
+
  
+renderData =  (i) => {
+        let idm = i;
+        return this.props.language.map((el, ind) => {
+                while (el.idMonth == i){
+                return (
+                     <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
+                     ) 
+             }}
+        )}
+     
+
+
   render() {
 
     return (
@@ -231,7 +246,7 @@ renderData_3 =  () => {
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                      <ul className="raspisanie_spisok">
-                     {this.renderData_2()}
+                     {this.renderData(2)}
                      </ul></div>
                <div className="rombiki_raspisanie_mesiac">ФЕВРАЛЬ</div></div>
             </div>
@@ -242,7 +257,7 @@ renderData_3 =  () => {
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                      <ul className="raspisanie_spisok">
-                     {this.renderData_3()}
+                     {this.renderData(3)}
                      </ul></div>
                     <div className="rombiki_raspisanie_mesiac">МАРТ</div></div>
             </div> 
@@ -253,7 +268,7 @@ renderData_3 =  () => {
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                     <ul className="raspisanie_spisok">
-                     {this.renderData_4()}
+                    {this.renderData(4)}
                      </ul></div>
                     <div className="rombiki_raspisanie_mesiac">АПРЕЛЬ</div></div>
             </div> 
@@ -264,7 +279,7 @@ renderData_3 =  () => {
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                     <ul className="raspisanie_spisok">
-                     {this.renderData_5()}
+                    {this.renderData(5)}
                      </ul></div>
                     <div className="rombiki_raspisanie_mesiac">МАЙ</div></div>
             </div> 
@@ -275,7 +290,7 @@ renderData_3 =  () => {
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                     <ul className="raspisanie_spisok">
-                     {this.renderData_6()}
+                    {this.renderData(6)}
                      </ul></div>
                     <div className="rombiki_raspisanie_mesiac">ИЮНЬ</div></div>
             </div> 
@@ -286,7 +301,7 @@ renderData_3 =  () => {
                     <div className="rombiki_raspisanie_text">
                     <div className="yrok_raspisanie">
                     <ul className="raspisanie_spisok">
-                     {this.renderData_7()}
+                     {this.renderData(7)}
                      </ul></div>
                     <div className="rombiki_raspisanie_mesiac">ИЮЛЬ</div></div>
                     <div className="flex_zapisi">
