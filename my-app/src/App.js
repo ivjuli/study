@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Rombiki from './components/Rombiki/Rombiki';
 import Footer from './components/Footer/Footer';
 import {getAllLanguage} from '././helpers/api';
+/*import {getAllmonth} from '././helpers/api';*/
 import './App.css';
 
 import {connect} from 'react-redux'
@@ -13,111 +14,32 @@ class App extends Component {
 
 constructor() {
         super();
-        
-        /*this.renderData();*/
+
 }
 
-getData = async () => {
-const language = await getAllLanguage();
-this.setState({language})
-}
-
-/*renderData_2 =  () => {
-   return this.props.language.map((el, ind) => {
-           while (el.idMonth == 2){
-           return (
-                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
-                ) 
-        }}
-   )}
-
-renderData_3 =  () => {
-        return this.props.language.map((el, ind) => {
-                while (el.idMonth == 3){
-                        return (
-                                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
-                                ) 
-                        }}
-                   )}
-
-        renderData_4 =  () => {
-                return this.props.language.map((el, ind) => {
-                        while (el.idMonth == 4){
-                                return (
-                                        <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
-                                        ) 
-                                }}
-                           )}
-        
-                renderData_5 =  () => {
-                        return this.props.language.map((el, ind) => {
-                                while (el.idMonth == 5){
-                                        return (
-                                                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
-                                                ) 
-                                        }}
-                                   )}
-                        renderData_6 =  () => {
-                                return this.props.language.map((el, ind) => {
-                                        while (el.idMonth == 6){
-                                                return (
-                                                        <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
-                                                        ) 
-                                                }}
-                                           )}
-                                renderData_7 =  () => {
-                                        return this.props.language.map((el, ind) => {
-                                                while (el.idMonth == 7){
-                                                        return (
-                                                                <div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>
-                                                                ) 
-                                                        }}
-                                                   )}     */
-                
-/*renderData_ob =  () => {
-                return this.props.language.map((el, ind) => {
-                        while (el.idMonth == 3){
-                        return (
-                             <ul><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></ul>) }}
-                )}*/
-
-/*delData_is = () => {
-        this.props.delLanguage();
+/*getData = async () => {
+const lm = await Promise.all([getAllLanguage(), getAllmonth()]);
+const language = lm[0];
+const month = lm[1];
+this.setState({language, month})
 }*/
 
-/*delData_is = () => {
-       return this.props.language.map((el, ind) => {
-                while (el.namelanguage == "норвежский"){
+getData = async () => {
+        const language = await getAllLanguage();
+        this.setState({language})
+        }
+
+
+        renderDataM =  (m) => {
+                let idmm = m;
+                return this.props.month.map((el, ind) => {
+                        while (el.idMonth == m){
                         return (
-                const newNamelanguage = language.splice();
-                ) 
-        }}
-   )}*/
+                                <div className="rombiki_raspisanie_mesiac">{el.nameMonth}</div>
+                             ) 
+                     }}
+                )}
 
-/*renderData_is =  () => {
-        return this.props.language.map((el, ind) => {
-                while (el.namelanguage == "исландский"){
-                        return (
-                                 this.props.language.map((el, ind) => {
-                                                while (el.idMonth == 2){
-                                                return (<div><li className="spisok">{el.startData}</li><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li><div>); }
-                                                else  {return  (<div><li className="spisok">{el.namelanguage}</li><li className="spisok">{el.level}</li></div>)}
-                                                 
-                                             }
-                                        )
-                                                   ) 
-                        }}
-                   )}     */
-
-/*renderData_is =  (
-) => {        const arr = this.state.language;
-        arr.splice ("исландский");
-        this.setState ({language: arr});}*/
-
-/*const arr1 = [...arr]
-arr1.filter(el=>{return el.language == "исланский"})*/
-
- 
 renderData =  (i) => {
         let idm = i;
         return this.props.language.map((el, ind) => {
@@ -128,9 +50,53 @@ renderData =  (i) => {
              }}
         )}
      
+/*dataFilter = () => { let lname = name;
+        const languageFilter = [...getAllLanguage];
+        languageFilter.filter(el=>{return el.namelanguage == "исландский"}); 
+}  */    
+
+/*dataFilter = () => {
+let languageFilter = [...getAllLanguage];
+languageFilter.filter((el, ind) => {
+       return (
+        <div><li className="spisok">{el.startData}</li>
+        <li className="spisok">{el.namelanguage =="исландский"}</li>
+        <li className="spisok">{el.level}</li></div>);
+        })}*/
+
+
+/*getDataFilter = async () => {
+        const languageFilter = await getAllLanguage();
+        this.setState({languageFilter})
+        }*/
+
+/*const language = [...getAllLanguage]
+language.filter((el) => {return el.namelanguage == "исланский"})
+
+
+dataFilter2 = () => {
+        return this.props.language.filter((el) => {return el.namelanguage == "исланский"})}*/
+
+   /* filt = ()=> {    
+let filL = getAllLanguage.filter(el => {return el.namelanguage == "исланский"})}
+
+
+filt2 = ()=> {
+const arr1 = [... [this.props.language]]
+arr1.filter(el=>{return el.namelanguage == "исланский"})}
+
+filt3 = ()=> {
+        getAllLanguage.filter(el=>{return el.namelanguage == "исланский"})}*/
 
 
   render() {
+
+/*console.log(this.dataFilter2());*/
+/*console.log(this.filL());
+console.log(this.arr1);
+console.log(this.filt2());
+console.log(this.filt3());*/
+
 
     return (
      
@@ -247,7 +213,7 @@ renderData =  (i) => {
                     <div className="yrok_raspisanie">
                      <ul className="raspisanie_spisok">
                      {this.renderData(2)}
-                     </ul></div>
+                                          </ul></div>
                <div className="rombiki_raspisanie_mesiac">ФЕВРАЛЬ</div></div>
             </div>
 
@@ -324,8 +290,8 @@ export default connect(
         (store) =>{
                 return{
                         language: store.language,
-                        month: store.month,
-                }
-        }
+                        /*month: store.month,*/
+                };
+        },
 
 )(App);
