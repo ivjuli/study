@@ -1,3 +1,5 @@
+import {GET_MONTH} from '../helpers/actionsConst';
+
 const iniState = [
     {
      "idMonth": 1,
@@ -53,8 +55,10 @@ const iniState = [
 
    export default function month(state=iniState, action) {
        switch (action.type) {
-           default: 
-           return state;
-       }
-   }
+        case GET_MONTH:
+        return [... action.payload];
+        default: 
+        return state;
+    }
+}
    
