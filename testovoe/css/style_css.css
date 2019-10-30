@@ -1,0 +1,85 @@
+.wrapper {
+    background-color: rgb(67, 69, 82);
+    width: 375px;
+    height: 812px;
+    margin: auto;
+}
+.signal {
+    width: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 270px;
+    padding-top: 5px;
+}
+.icon {
+    fill: white;
+}
+
+.element {
+    width: 300px;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.text {
+    font-family: 'Arial';
+    color: rgb(157, 157, 168);
+    text-align: center;
+    line-height: 25px;
+}
+.white {
+    color: white;
+}
+.green {
+    color: green;
+}
+.size_14 {
+    font-size: 14px;
+}
+.size_16 {
+    font-size: 16px;
+}
+.size_20 {
+    font-size: 20px;
+}
+.size_30 {
+    font-size: 30px;
+}
+.stroka {
+    display: flex;
+    justify-content: center;
+}
+.padding_top_15 {
+    padding-top: 15px;
+}
+.blok {
+    background-color: rgba(118, 118, 125, 0.2);
+    width: 345px;
+    height: 145px;
+    margin: auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.margin_top_15 {
+    margin-top:  15px;
+}
+.logo {
+    background-color: greenyellow;
+    width: 325px;
+    height: 70px;
+}
+.price {
+    background-color: yellow;
+    width: 325px;
+    height: 70px;
+}
+.blok_price {
+    
+}
